@@ -7,6 +7,7 @@
     <title>Cohort 5 Final Project</title>
     <link rel="stylesheet" href="./css/general.css">
     <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/hero.css">
     <script src="./js/feather.min.js"></script>
     <link rel="icon" href="./img/favicon.png">
 </head>
@@ -15,7 +16,6 @@
 
     <header>
         <div class="container">
-
             <div class="topbar">
                 <div class="topcontact">
                     <div class="topmailtext">
@@ -52,7 +52,7 @@
                 </div>
                 <nav class="nav">
                     <div class="mobile-menu">
-                        <i data-feather="menu"></i>
+                        <i data-feather="menu" class="hamburger" id="openOverlay" onclick="openOverlay()"></i>
                     </div>
                     <div class="navitems">
                         <ul>
@@ -66,12 +66,57 @@
                     </div>
                 </nav>
             </div>
+
+            <div class="overlay" id="overlay">
+                <div class="overlay-content">
+                    <span class="feather" id="closeOverlay" onclick="closeOverlay()">
+                        <i data-feather="x" class="closeicon"></i>
+                    </span>
+                    <div class="menuitems-overlay">
+                        Menu items here
+                    </div>
+                </div>
+            </div>
+
         </div>
     </header>
+
+    <section class="hero">
+        <div class="herooverlay"></div>
+        <div class="herocontent">
+            <div class="herotitle">
+                Right way ...
+            </div>
+            <div class="herotext">
+                <h2>It's Our Pride <br> To Fight For Your Dream</h2>
+            </div>
+            <div class="herodesc">
+                But I must explain to you how all this mistaken idea of
+                denouncing pleasure and praising pain was born and I will give
+                you a complete account of the system, and expound the actual
+                teachings of the great explorer of the truth.
+            </div>
+        </div>
+        <div class="herobtns">
+            <button class="herobtn freeconsulting">Free Consulting</button>
+            <button class="herobtn learnmore">Learn More</button>
+        </div>
+    </section>
 
 
     <script>
         feather.replace();
+
+        function openOverlay() {
+
+            document.getElementById("overlay").style.display = "flex";
+            document.getElementById("openOverlay").style.display = "none";
+        }
+
+        function closeOverlay() {
+            document.getElementById("overlay").style.display = "none";
+            document.getElementById("openOverlay").style.display = "block";
+        }
     </script>
 </body>
 
